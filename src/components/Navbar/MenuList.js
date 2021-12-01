@@ -16,7 +16,11 @@ export const MenuList = [
     url: "/support",
   },
   {
+    title: "Register",
+    url: "/register",
+  },
+  {
     title: "Sign In",
-    url: "/demo",
+    url: "/login",
   },
 ];

@@ -1,10 +1,14 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 
 function Icons() {
   return (
-    <div className="page-heading">
-      <h1>Icons</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="page-heading">
+        <h1>Icons</h1>
+      </div>
+    </>
   );
 }
 

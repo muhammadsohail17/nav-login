@@ -1,19 +1,14 @@
 import React from "react";
-import {
-  Grid,
-  Paper,
-  Avatar,
-  TextField,
-  Typography,
-  Link,
-} from "@material-ui/core";
+import { Grid, Paper, Avatar, TextField, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({ setIsLoggedIn }) => {
+  setIsLoggedIn(false);
   const paperStyle = {
     padding: 20,
     height: "60vh",
@@ -26,7 +21,9 @@ const LoginForm = () => {
   const history = useHistory();
 
   const redirect = () => {
-    history.push({ pathname: "/", state: "showNav" });
+    localStorage.setItem("loggedIn", true);
+    history.push({ pathname: "/" });
+    // setIsLoggedIn(true);
   };
   return (
     <Grid>
@@ -63,9 +60,8 @@ const LoginForm = () => {
           <Link href="#">Forgot password ?</Link>
         </Typography>
         <Typography>
-          {" "}
           Do you have an account?
-          <Link href="#">Sign Up</Link>
+          <Link to={"/signup"}>Sign Up</Link>
         </Typography>
       </Paper>
     </Grid>

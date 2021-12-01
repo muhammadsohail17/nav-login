@@ -1,9 +1,13 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 function Docs() {
   return (
-    <div className="page-heading">
-      <h1>Documents</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="page-heading">
+        <h1>Documents</h1>
+      </div>
+    </>
   );
 }
 
