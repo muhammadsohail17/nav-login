@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-function Demo() {
+function Login() {
   const history = useHistory();
 
   const redirect = () => {
@@ -10,4 +10,4 @@ function Demo() {
   return <div className="page-heading">{/* <h1>Try For Free</h1> */}</div>;
 }
 
-export default Demo;
+export default Login;

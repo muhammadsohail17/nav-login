@@ -1,9 +1,14 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 function Home() {
   return (
-    <div className="page-heading">
-      <h1>Home</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="page-heading">
+        <h1>{localStorage.getItem("userInfo")}</h1>
+        <p></p>
+      </div>
+    </>
   );
 }
 
