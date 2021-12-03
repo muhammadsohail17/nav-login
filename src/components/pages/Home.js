@@ -5,7 +5,8 @@ function Home() {
     <>
       <Navbar />
       <div className="page-heading">
-        <h1>Home</h1>
+        <h1>{localStorage.getItem("userInfo")}</h1>
+        <p></p>
       </div>
     </>
   );

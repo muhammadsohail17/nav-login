@@ -76,7 +76,7 @@ const RegistrationForm = () => {
         return moment().diff(moment(value), "years") >= 18;
       })
       .required("Required"),
-    employ: Yup.bool().oneOf([true], "abay gandu").required("hrrhrhr"),
+    employ: Yup.bool().oneOf([true], "chk").required("Required"),
   });
 
   return (

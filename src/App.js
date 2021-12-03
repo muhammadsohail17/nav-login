@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
 import LoginForm from "./components/LoginForm/LoginForm";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
 import Home from "./components/pages/Home";
@@ -41,6 +46,16 @@ function App(props) {
             render={(props) => (
               <LoginForm setIsLoggedIn={setIsLoggedIn} {...props} />
             )}
+          />
+          <Route
+            path="/logout"
+            exact
+            render={(props) => {
+              console.log(props.history);
+              localStorage.removeItem("loggedIn");
+              localStorage.removeItem("userInfo");
+              return <Redirect to="login" />;
+            }}
           />
         </Switch>
       </Router>

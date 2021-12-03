@@ -20,7 +20,25 @@ export const MenuList = [
     url: "/register",
   },
   {
-    title: "Sign In",
+    title: "log In",
     url: "/login",
   },
+  {
+    title: "log out",
+    url: "/logout",
+  },
 ];
+
+export const getMenuList = (isloggedin) => {
+  let array = [];
+  for (const item of MenuList) {
+    if (isloggedin) {
+      if (item.title !== "Register") {
+        if (item.title !== "log In") {
+          array.push(item);
+        }
+      }
+    }
+  }
+  return array;
+};
